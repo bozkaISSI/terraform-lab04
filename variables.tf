@@ -1,23 +1,9 @@
-variable "github_token" {
-  description = "GitHub Personal Access Token"
-  type        = string
-  sensitive   = true
+variable "regions" {
+  type    = list(string)
+  default = ["us-east-1", "us-west-2"]
 }
 
-variable "repository_name" {
-  description = "Name of the GitHub repository to create"
-  type        = string
-  default     = "terraform-managed-repo"
-}
-
-variable "repository_description" {
-  description = "Description of the GitHub repository"
-  type        = string
-  default     = "Repository managed by Terraform"
-}
-
-variable "publicly_visible" {
-  description = "Whether the repository should be public"
-  type        = bool
-  default     = false
+variable "bucket_name_prefix" {
+  type    = string
+  default = "terraform-multiregion"
 }
